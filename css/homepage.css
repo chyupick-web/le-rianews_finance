@@ -23,6 +23,19 @@ h1, h2, h3, h4, h5, h6, body, p {
 
 .thumbnail {
   border: solid 4px #fefefe;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+  display: inline-block;
+  line-height: 0;
+  max-width: 100%;
+  transition: box-shadow 200ms ease-out;
+  margin-bottom: 1rem; }
+  .thumbnail:hover, .thumbnail:focus {
+    box-shadow: 0 0 6px 1px rgba(238, 50, 36, 0.5); 
+  }
+
+.thumbnail-map {
+  border: solid 4px #fefefe;
   box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
   display: inline-block;
   line-height: 0;
@@ -31,8 +44,7 @@ h1, h2, h3, h4, h5, h6, body, p {
   border-radius: 0;
   margin-bottom: 1rem; }
   .thumbnail:hover, .thumbnail:focus {
-    box-shadow: 0 0 6px 1px rgba(238, 50, 36, 0.5); 
-  }
+    box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }
     
 .stat, span {
     color: #EE3224;
@@ -44,7 +56,7 @@ h1, h2, h3, h4, h5, h6, body, p {
     color: #FFFFFF;
 }
 
-h3 {
+h4 {
     font-size: 1em;
     position: relative;
     margin: auto 0;
