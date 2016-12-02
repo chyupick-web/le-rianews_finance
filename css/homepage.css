@@ -38,4 +38,21 @@ h1, h2, h3, h4, h5, h6, body, p {
     color: #EE3224;
 }
 
+.alerts {
+    background-color: #EE3224;
+    margin: 15px auto 15px auto;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-size: 1em;
+    position: relative;
+    margin: auto 0;
+    padding: 0.5%;
+}
+
+.callout {
+    margin: 0;
+}
+
 /* RC red: #EE3224 */
