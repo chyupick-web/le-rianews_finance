@@ -1,5 +1,6 @@
 .logo {
-    max-height: 120px;
+    max-height: 70px;
+
 }
 
 .menu-text {
@@ -17,6 +18,15 @@
     border: none;
     min-height: 288px;
 }
+
+.callout-americas {
+    background-image: url("../assets/americas_banner.png");
+    background-size: cover;
+    background-position: bottom;
+    border: none;
+    min-height: 288px;
+}
+
 
 .top-bar, .menu-text {
     background-color: #FFFFFF;
