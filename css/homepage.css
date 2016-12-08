@@ -47,8 +47,12 @@ h1, h2, h3, h4, h5, h6, body, p {
 }
   
 .thumbnail-icons {
-  width: 200px;
-  height: 200px;
+  height: auto;
+  width:auto;
+  max-width: 180px;
+  max-height: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 50%;
   margin-bottom: 1rem; 
 }
@@ -106,13 +110,13 @@ h1, h2, h3, h4, h5, h6, body, p {
     display: block;
     position: absolute;
     
-    width: 215px;
-    height: 215px;
+    width: 185px;
+    height: 175px;
     line-height: 185px;
-    border-radius: 0%;
+    border-radius: 50%;
     
     left: 0px;
-    bottom: -96px;
+    bottom: -74px;
     
     color: #EE3224;
     font-weight: bold;
