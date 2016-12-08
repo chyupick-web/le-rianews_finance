@@ -106,13 +106,13 @@ h1, h2, h3, h4, h5, h6, body, p {
     display: block;
     position: absolute;
     
-    width: 210px;
-    height: 210px;
+    width: 215px;
+    height: 215px;
     line-height: 185px;
-    border-radius: 50%;
+    border-radius: 0%;
     
-    left: -5px;
-    bottom: -90px;
+    left: 0px;
+    bottom: -96px;
     
     color: #EE3224;
     font-weight: bold;
