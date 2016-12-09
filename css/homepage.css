@@ -195,5 +195,11 @@ p {
     border-color: #FFFFFF;
 }
 
+.map-leaflet {
+    background-color: #FFFF0D;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto; }
+
 
 /* RC red: #EE3224 OR rgb(238,50,36) */
