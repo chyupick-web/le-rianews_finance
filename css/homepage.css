@@ -36,14 +36,14 @@
 }
 
 h1, h2, h3, h4, h5, h6, body, p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Hindi', sans-serif;
 }
 
 .thumbnail {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-bottom: 1rem; 
+  margin-bottom: 1.1rem; 
 }
   
 .thumbnail-icons {
@@ -142,6 +142,14 @@ h1, h2, h3, h4, h5, h6, body, p {
 
 h3 {
     padding-top: 8px;
+    font-size:20px;
+}
+
+h1 {
+    font-size:20px;
+    font-weight:bold;
+    color:#606161;
+
 }
 
 h4 {
@@ -149,6 +157,10 @@ h4 {
     position: relative;
     margin: auto 0;
     padding: 0.5%;
+}
+
+p {
+  font-size:14px;
 }
 
 .callout {
