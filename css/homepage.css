@@ -143,18 +143,22 @@ h1, h2, h3, h4, h5, h6, body, p {
 h3 {
     padding-top: 8px;
     font-size:20px;
+    position: relative;
 }
 
 h2 {
     padding-top: 8px;
     font-size:20px;
     color:#EE3224;
+    position: relative;
 }
 
 h1 {
     font-size:20px;
     font-weight:bold;
     color:#606161;
+    position: relative;
+    text-align: center;
 
 }
 
@@ -167,6 +171,8 @@ h4 {
 
 p {
   font-size:14px;
+  position: relative;
+  text-align: center;
 }
 
 .callout {
