@@ -55,3 +55,67 @@ function createMap(data,geom){
             }
     }).addTo(map);
 }
+
+function hxlProxyToJSON(input,headers){
+    var output = [];
+    var keys=[]
+    input.forEach(function(e,i){
+        if(i==0){
+            e.forEach(function(e2,i2){
+                var parts = e2.split('+');
+                var key = parts[0]
+                if(parts.length>1){
+                    var atts = parts.splice(1,parts.length);
+                    atts.sort();
+                    atts.forEach(function(att){
+                        key +='+'+att
+                    });
+                }
+                keys.push(key);
+            });
+        } else {
+            var row = {};
+            e.forEach(function(e2,i2){
+                row[keys[i2]] = e2;
+            });
+            output.push(row);
+        }
+    });
+    return output;
+}
+
+var appealsurl = 'https://beta.proxy.hxlstandard.org/data.json?strip-headers=on&filter03=merge&clean-date-tags01=%23date&filter02=select&merge-keys03=%23meta%2Bid&filter04=replace-map&filter05=merge&merge-tags03=%23meta%2Bcoverage%2C%23meta%2Bfunding&select-query02-01=%23date%2Bend%3E999999&merge-keys05=%23country%2Bname&merge-tags05=%23country%2Bcode&filter01=clean&replace-map-url04=https%3A//docs.google.com/spreadsheets/d/1hTE0U3V8x18homc5KxfA7IIrv1Y9F1oulhJt0Z4z3zo/edit%3Fusp%3Dsharing&merge-url03=https%3A//docs.google.com/spreadsheets/d/1rVAE8b3uC_XIqU-eapUGLU7orIzYSUmvlPm9tI0bCbU/edit%23gid%3D0&merge-url05=https%3A//docs.google.com/spreadsheets/d/1GugpfyzridvfezFcDsl6dNlpZDqI8TQJw-Jx52obny8/edit%3Fusp%3Dsharing&url=https%3A//docs.google.com/spreadsheets/d/19pBx2NpbgcLFeWoJGdCqECT2kw9O9_WmcZ3O41Sj4hU/edit%23gid%3D0';
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
+if(dd<10) {
+    dd='0'+dd
+}
+if(mm<10) {
+    mm='0'+mm
+}
+var date = yyyy + '-' + mm + '-' + dd;
+appealsurl = appealsurl.replace('999999',date);
+
+
+
+
+
+var dataCall = $.ajax({
+    type: 'GET',
+    url: appealsurl,
+    dataType: 'json',
+});
+
+var geomCall = $.ajax({
+    type: 'GET',
+    url: '/data/worldmap.json',
+    dataType: 'json'
+});
+
+$.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
+    var data = hxlProxyToJSON(dataArgs[0]);
+    var geom = topojson.feature(geomArgs[0],geomArgs[0].objects.geom);
+    createMap(data,geom);
+});

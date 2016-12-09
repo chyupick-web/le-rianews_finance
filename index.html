@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/leaflet.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
@@ -38,9 +39,9 @@
       <h4>Alerts</h4>
     </div>
 
-    <div class="map-leaflet">
-        <img class="thumbnail-map" src="http://placehold.it/750x350">
-      </div>
+    <div class="row">
+      <div id="map" class="medium-12 columns">
+    </div>
 
     <div class="row details-row">
       <a class="details" href="http://rcrcsims.org/" target="_blank">
@@ -191,7 +192,8 @@
         <li><a href="#">Four</a></li>
       </ul>
     </div>
-
+    <script src="js/vendor/topojson.v1.min.js"></script>
+    <script src="js/vendor/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/index.js"></script>

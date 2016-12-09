@@ -57,15 +57,8 @@ h1, h2, h3, h4, h5, h6, body, p {
   margin-bottom: 1rem; 
 }
 
-.thumbnail-map {
-  border: solid 4px #fefefe;
-  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
-  display: inline-block;
-  line-height: 0;
-  max-width: 100%;
-  transition: box-shadow 200ms ease-out;
-  border-radius: 0;
-  margin-bottom: 1rem;
+#map {
+  height:400px;
 }
 
 .icons {
@@ -194,12 +187,5 @@ p {
     border-width: 5px;
     border-color: #FFFFFF;
 }
-
-.map-leaflet {
-    background-color: #FFFF0D;
-    max-width: 75rem;
-    margin-left: auto;
-    margin-right: auto; }
-
 
 /* RC red: #EE3224 OR rgb(238,50,36) */
