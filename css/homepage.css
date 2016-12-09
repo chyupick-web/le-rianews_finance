@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, body, p {
     text-align: center;
 }
 
-.icons-regions .rollover-regions h3 {
+.icons-regions .rollover-regions h2 {
     display: inline-block;
     vertical-align: middle;
     line-height: 1em;
@@ -143,6 +143,12 @@ h1, h2, h3, h4, h5, h6, body, p {
 h3 {
     padding-top: 8px;
     font-size:20px;
+}
+
+h2 {
+    padding-top: 8px;
+    font-size:20px;
+    color:#EE3224;
 }
 
 h1 {
