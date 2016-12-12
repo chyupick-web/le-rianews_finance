@@ -30,6 +30,14 @@
     min-height: 288px;
 }
 
+.callout-footer {
+    background-size: cover;
+    background-position: bottom;
+    border: none;
+    background-color: #606161;
+    min-height: 150px;
+}
+
 
 .top-bar, .menu-text {
     background-color: #FFFFFF;
@@ -152,6 +160,18 @@ h1 {
     color:#606161;
     position: relative;
     text-align: center;
+
+}
+
+h6  {
+    font-size:10px;
+    color:#FFFFFF;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 
 }
 

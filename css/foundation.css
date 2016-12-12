@@ -1495,6 +1495,7 @@ kbd {
   .button.expanded {
     display: block;
     width: 100%;
+    margin-top: 20px;
     margin-left: 0;
     margin-right: 0; }
   .button.primary {
@@ -2074,7 +2075,7 @@ select {
   .callout.primary {
     background-color: #def0fc; }
   .callout.secondary {
-    background-color: #ebebeb; }
+    background-color: #606161; }
   .callout.success {
     background-color: #e1faea; }
   .callout.warning {
