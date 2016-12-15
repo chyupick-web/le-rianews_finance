@@ -31,7 +31,6 @@ function createMap(data,geom){
         var color = '#aaaaaa';
         var fillOpacity = 0;
         var cls = 'country'
-
         if(data.map(function(e) { return e['#country+code']; }).indexOf(feature.properties['ISO_A3'])>-1){
             color = '#B71C1C';
             fillOpacity = 0.7;
@@ -51,9 +50,46 @@ function createMap(data,geom){
     map.overlay = L.geoJson(geom,{
         style:style,
         onEachFeature: function (feature, layer) {
+                layer.on({
+                mouseover: fillInControl,
+                mouseout: emptyControl,
+                click: onClick
+                });
+
                 feature.properties.bounds_calculated=layer.getBounds();
             }
     }).addTo(map);
+////////////////////////////////////////////////////////////////////////////////
+    function fillInControl(e) {
+        var layer = e.target;
+        control_info_country.update(layer.feature.properties);
+    }
+
+    function emptyControl() {
+        $("div.control_info_country").empty();
+    }
+
+    function onClick(e) {
+        var layer = e.target;
+        if(data.map(function(f) { return f['#country+code']; }).indexOf(layer.feature.properties['ISO_A3'])>-1){
+            window.open('https://ifrcgo.github.io/pages/current_appeals/#All', '_blank');
+        }
+    }
+
+    var control_info_country = L.control({position: 'topright'});
+    control_info_country.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'control_info_country');
+        div.innerHTML = '<h4>Mouse over a country</h4>';
+        return div;
+    };
+
+    control_info_country.update = function (props) {
+        $("div.control_info_country").html(props.NAME);
+    };
+
+    control_info_country.addTo(map);
+///////////////////////////////////////////////////////////////////////////////
+
 }
 
 function hxlProxyToJSON(input,headers){
