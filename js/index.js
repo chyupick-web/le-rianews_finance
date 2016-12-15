@@ -92,6 +92,15 @@ function createMap(data,geom){
 
 }
 
+function rss(data){
+  var string = '';
+  data.forEach(function(d){
+    console.log(d);
+    string += '<a href="'+d.link+'">'+d.title + '</a> - ';
+  });
+  $('#feed').html(string);
+}
+
 function hxlProxyToJSON(input,headers){
     var output = [];
     var keys=[]
@@ -134,9 +143,7 @@ if(mm<10) {
 var date = yyyy + '-' + mm + '-' + dd;
 appealsurl = appealsurl.replace('999999',date);
 
-
-
-
+var rssfeed = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=30&output=json&q=http://www.gdacs.org/xml/rss.xml'
 
 var dataCall = $.ajax({
     type: 'GET',
@@ -148,6 +155,15 @@ var geomCall = $.ajax({
     type: 'GET',
     url: '/data/worldmap.json',
     dataType: 'json'
+});
+
+$.ajax({
+    type: 'GET',
+    url: rssfeed,
+    dataType: 'jsonp',
+    success:function(response){
+        rss(response.responseData.feed.entries);
+    }
 });
 
 $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){

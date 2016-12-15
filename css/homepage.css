@@ -74,6 +74,15 @@ h1, h2, h3, h4, h5, h6, body, p {
 
 #map {
   height:400px;
+  width:100%;
+}
+
+.control_info_country {
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .icons {
@@ -262,5 +271,33 @@ h5 {
   position: relative;
   font-size: 12 px;
   }
+
+.marquee {
+    width: 100%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    color:#fff;
+    padding-left: 100%;  /* show the marquee just outside the paragraph */
+    animation: marquee 45s linear infinite;
+}
+
+.marquee span a {
+  color:#fff;
+}
+
+.marquee span:hover {
+    animation-play-state: paused
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
 
 /* RC red: #EE3224 OR rgb(238,50,36) */

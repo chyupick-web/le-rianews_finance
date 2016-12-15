@@ -35,15 +35,15 @@
     </div>
 
     <div class="row column alerts">
-      <h4>RSS Feeds from external sources</h4>
+      <p class="marquee"><span id="feed"></span></p>
     </div>
 
     <div class="row column">
       <ul class="vertical medium-horizontal menu expanded text-center">
-        <li><a href="#"><div class="stat">5</div><span>Core Datasets</span></a></li>
-        <li><a href="#"><div class="stat">190</div><span>National Societies</span></a></li>
         <li><a href="#"><div class="stat">50</div><span>Emergency Appeals</span></a></li>
         <li><a href="#"><div class="stat">19</div><span>DREFs</span></a></li>
+        <li><a href="#"><div class="stat">77%</div><span>Coverage</span></a></li>
+        <li><a href="#"><div class="stat">724M</div><span>Total Appeals</span></a></li>
         <li><a href="#"><div class="stat">86M</div><span>Beneficiaries</span></a></li>
       </ul>
     </div>
@@ -51,7 +51,24 @@
     <hr>
 
     <div class="row">
-      <div id="map" class="leaflet-container">
+      <div class="medium-6 columns">
+        <h1>Current Operations</h1>
+        <div id="map" class="leaflet-container"></div> 
+      </div>
+      <div id="updates" class="medium-6 columns">
+        <h1>Latest Field Reports</h1>
+        <table>
+          <tr><td><a href="http://52.91.94.199/fieldreport/8912" target="_blank">TD04F</a></td><td>Fiji</td><td>Tropical cyclone</td><td>2016-12-15</td></tr>
+          <tr><td><a href="http://52.91.94.199/fieldreport/8911" target="_blank">Cyclone VARDAH</a></td><td>India</td><td>Tropical cyclone</td><td>2016-12-14</td></tr>
+          <tr><td><a href="http://52.91.94.199/fieldreport/8910" target="_blank">Cyclone VARDAH</a></td><td>India</td><td>Tropical cyclone</td><td>2016-12-12</td></tr>
+          <tr><td><a href="http://52.91.94.199/fieldreport/8909" target="_blank">Flash Flooding in Jamaica</a></td><td>Jamaica</td><td>Flash floods</td><td>2016-12-12</td></tr>
+        </table>
+        <h1>Latest Alerts</h1>
+        <table>
+          <tr><td>Hurricane Matthew</td><td>Haiti</td><td>FACT Third and Final Rotation Members</td></tr>
+          <tr><td>Hurricane Matthew</td><td>Haiti</td><td>FACT Second Rotation Members</td></tr>
+        </table>
+      </div>
     </div>
 
     <hr>
