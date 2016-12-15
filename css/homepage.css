@@ -9,11 +9,17 @@
 
 .menu-text {
     padding: 0;
+    margin-right: 80px;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .top-bar {
     padding: 0;
-}
+    margin-right: 80px;
+    font-weight: bold;
+    font-size: 12px;
+     }
 
 .callout {
     background-image: url("../assets/landing_banner_min.jpg");
@@ -226,7 +232,7 @@ p {
   right: 0;
   bottom: 0;
   background: #EE3224;
-  height: 4px;
+  height: 2px;
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
   -webkit-transition-property: transform;
