@@ -28,20 +28,20 @@ function createMap(data,geom){
             });
 
     var style = function(feature) {
-        var color = '#aaaaaa';
-        var fillOpacity = 0;
+        var color = '#606161';
+        var fillOpacity = 0.2;
         var cls = 'country'
         if(data.map(function(e) { return e['#country+code']; }).indexOf(feature.properties['ISO_A3'])>-1){
-            color = '#B71C1C';
-            fillOpacity = 0.7;
+            color = '#EE3224';
+            fillOpacity = 1;
             cls = 'appealcountry country appeal'+feature.properties['ISO_A3']
         };
 
         return {
                 'color': color,
                 'fillcolor': color,
-                'weight': 1,
-                'opacity': 0.7,
+                'weight': 0.4,
+                'opacity': 0.4,
                 'fillOpacity':fillOpacity,
                 'className':cls
             };
