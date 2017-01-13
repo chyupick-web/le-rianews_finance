@@ -17,7 +17,6 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-color: #FFFFFF;
 	}
 .leaflet-container {
 	overflow: hidden;
@@ -182,6 +181,7 @@
 /* visual tweaks */
 
 .leaflet-container {
+	background: #ddd;
 	width: 50%;
     height: 50%;
     position: relative;
