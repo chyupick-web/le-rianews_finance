@@ -22,7 +22,7 @@ function createMap(data,geom){
     var baselayer2 = L.tileLayer('https://data.hdx.rwlabs.org/mapbox-layer-tiles/{z}/{x}/{y}.png', {minZoom:4});
 
     map = L.map('map',{
-                center: [35,0],
+                center: [52,0],
                 zoom: 1,
                 layers: [baselayer,baselayer2]
             });
