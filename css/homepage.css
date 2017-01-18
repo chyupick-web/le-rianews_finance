@@ -2,8 +2,8 @@
     max-height: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 80px;
-    margin-right: 300px;
+    margin-left: 300px;
+    margin-right: 200px;
 
 }
 
@@ -176,6 +176,8 @@ h1 {
     color:#606161;
     position: relative;
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -201,7 +203,12 @@ h4 {
 p {
   font-size:14px;
   position: relative;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-align: center;
+  color:#606161;
 }
 
 .callout {
@@ -220,8 +227,18 @@ p {
 
 .network-detail {
     border-style: solid;
-    border-width: 5px;
+    border-width: 20px;
     border-color: #FFFFFF;
+}
+
+.network-data {
+    border-style: solid;
+    border-width: 0.1px;
+    border-color: #F6F4F2;
+    box-shadow: 0 0 5px #606161;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .hvr-underline-reveal {

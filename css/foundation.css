@@ -783,6 +783,9 @@ button {
     margin-left: 16.66667%; }
   .medium-4 {
     width: 33.33333%; }
+  .medium-data {
+    width: 100%;
+    }
   .medium-push-4 {
     position: relative;
     left: 33.33333%; }
@@ -1472,6 +1475,18 @@ kbd {
   font-size: 0.9rem;
   background-color: #786A65;
   color: #fefefe; }
+.button-data {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  background-color: #EE3224;
+  color: #fefefe;
+  position: center; }
+
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
