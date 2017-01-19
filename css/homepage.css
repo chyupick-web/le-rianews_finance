@@ -239,6 +239,8 @@ p {
     margin-left: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
+    box-sizing: auto;
+    border-radius: 20px;
 }
 
 .hvr-underline-reveal {
