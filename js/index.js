@@ -95,10 +95,19 @@ function createMap(data,geom){
 function rss(data){
   var string = '';
   data.forEach(function(d){
-    console.log(d);
-    string += '<a href="'+d.link+'">'+d.title + '</a> - ';
+    string += '<a href="'+d['#meta+url']+'">'+ d['#meta+title'] + '</a> - ';
   });
   $('#feed').html(string);
+}
+
+function createFieldReports(data){
+    var html ='';
+    data.forEach(function(d,i){
+        if(i<5){
+            html += '<tr><td><a href="'+d['#meta+url']+'" target="_blank">'+d['#meta+title']+'</a></td><td>'+d['#country+name']+'</td><td>'+d['#crisis+type']+'</td><td>'+d['#date']+'</td></tr>';
+        }
+    });
+    $('#fieldreports').html(html);
 }
 
 function hxlProxyToJSON(input,headers){
@@ -142,12 +151,18 @@ if(mm<10) {
 }
 var date = yyyy + '-' + mm + '-' + dd;
 appealsurl = appealsurl.replace('999999',date);
-
-var rssfeed = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=30&output=json&q=http://www.gdacs.org/xml/rss.xml'
+var rssfeed = 'https://beta.proxy.hxlstandard.org/data.json?force=on&strip-headers=on&url=http%3A//52.91.94.199/open/gdacs&verify=off'
+var fieldReportsURL = 'https://beta.proxy.hxlstandard.org/data.json?strip-headers=on&force=on&url=https%3A//52.91.94.199/open/fieldreports/7&verify=off'
 
 var dataCall = $.ajax({
     type: 'GET',
     url: appealsurl,
+    dataType: 'json',
+});
+
+var fieldReportsCall = $.ajax({
+    type: 'GET',
+    url: fieldReportsURL,
     dataType: 'json',
 });
 
@@ -160,9 +175,9 @@ var geomCall = $.ajax({
 $.ajax({
     type: 'GET',
     url: rssfeed,
-    dataType: 'jsonp',
+    dataType: 'json',
     success:function(response){
-        rss(response.responseData.feed.entries);
+        rss(hxlProxyToJSON(response));
     }
 });
 
@@ -170,4 +185,9 @@ $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
     var data = hxlProxyToJSON(dataArgs[0]);
     var geom = topojson.feature(geomArgs[0],geomArgs[0].objects.geom);
     createMap(data,geom);
+});
+
+$.when(fieldReportsCall).then(function(frdata){
+    var data = hxlProxyToJSON(frdata);
+    createFieldReports(data);
 });
