@@ -1486,7 +1486,6 @@ kbd {
   color: #fefefe;
   display: block;
   margin:20px;
-  border-radius: 20px;
 }
 
   [data-whatinput='mouse'] .button {

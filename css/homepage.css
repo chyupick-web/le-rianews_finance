@@ -171,7 +171,7 @@ h2 {
 }
 
 h1 {
-    font-size:20px;
+    font-size:16px;
     font-weight:bold;
     color:#606161;
     position: relative;
@@ -182,13 +182,13 @@ h1 {
 }
 
 h4 {
-    font-size:20px;
     font-style:italic;
     color:#606161;
-    position: relative;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1em;
+    position: relative;
+    margin: auto 0;
+    padding: 0.5%;
 
 }
 
@@ -246,12 +246,11 @@ p {
     border-style: solid;
     border-width: 0.1px;
     border-color: #F6F4F2;
-    box-shadow: 0 0 5px #606161;
+    box-shadow: 0 0 1px #606161;
     margin-left: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
     box-sizing: auto;
-    border-radius: 20px;
 }
 
 .hvr-underline-reveal {
