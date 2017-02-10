@@ -16,6 +16,31 @@ $(document).ready(function() {
     });
 });
 
+function updateKeyFigures(data){
+    var totalappeals = 0;
+    var totalfunding = 0;
+    var totalDREF = 0;
+    var totalappeal = 0;
+    var totalBen = 0;
+    var totalBudget = 0;
+    data.forEach(function(d,i){
+        totalBen+=parseFloat(d['#targeted']);
+        totalBudget+=parseFloat(d['#meta+value']);
+        if(d['#severity']=='Minor Emergency'){
+            totalDREF +=1;
+        } else {
+            totalappeal +=1;
+            totalappeals+=parseFloat(d['#meta+value']);
+            totalfunding+=parseFloat(d['#meta+funding']);
+        }
+    });
+    $('#totalappeals').html(niceFormatNumber(totalBudget,true));
+    $('#totalbens').html(niceFormatNumber(totalBen,true));
+    $('#totalea').html(totalappeal);
+    $('#totaldref').html(totalDREF);
+    $('#totalcoverage').html((totalfunding/totalappeals).toFixed(2)*100+"%");
+}
+
 function createMap(data,geom){
 
     var baselayer = L.tileLayer('https://data.hdx.rwlabs.org/mapbox-base-tiles/{z}/{x}/{y}.png', {});
@@ -110,6 +135,30 @@ function createFieldReports(data){
     $('#fieldreports').html(html);
 }
 
+function niceFormatNumber(num,round){
+    if(isNaN(num)){
+        return num;
+    } else {
+        if(!round){
+            var format = d3.format("0,000");
+            return format(num);
+        } else {
+            var output = d3.format(".4s")(num);
+            if(output.slice(-1)=='k'){
+                output = Math.round(output.slice(0, -1) * 1000);
+                output = d3.format("0,000")(output);
+            } else if(output.slice(-1)=='M'){
+                output = d3.format(".1f")(output.slice(0, -1))+' m';
+            } else if (output.slice(-1) == 'G') {
+                output = output.slice(0, -1) + ' b';
+            } else {
+                output = ''+d3.format(".3s")(num);
+            }
+            return output;
+        }
+    }
+}
+
 function hxlProxyToJSON(input,headers){
     var output = [];
     var keys=[]
@@ -184,6 +233,7 @@ $.ajax({
 $.when(dataCall, geomCall).then(function(dataArgs, geomArgs){
     var data = hxlProxyToJSON(dataArgs[0]);
     var geom = topojson.feature(geomArgs[0],geomArgs[0].objects.geom);
+    updateKeyFigures(data);
     createMap(data,geom);
 });
 

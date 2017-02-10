@@ -35,11 +35,11 @@
 
     <div class="row column">
       <ul class="vertical medium-horizontal menu expanded text-center">
-        <li><a href="#"><div class="stat">44</div><span>Active Emergency Appeals</span></a></li>
-        <li><a href="#"><div class="stat">24</div><span>Ongoing DREF Operations</span></a></li>
-        <li><a href="#"><div class="stat">76%</div><span>Emergency Appeal Funding Coverage</span></a></li>
-        <li><a href="#"><div class="stat">650M</div><span>Total Budget for Emergency Operations</span></a></li>
-        <li><a href="#"><div class="stat">18M</div><span>Overall Targeted Population</span></a></li>
+        <li><a href="#"><div id="totalea" class="stat"></div><span>Active Emergency Appeals</span></a></li>
+        <li><a href="#"><div id="totaldref" class="stat"></div><span>Ongoing DREF Operations</span></a></li>
+        <li><a href="#"><div id="totalcoverage" class="stat"></div><span>Emergency Appeal Funding Coverage</span></a></li>
+        <li><a href="#"><div id="totalappeals" class="stat"></div><span>Total Budget for Emergency Operations</span></a></li>
+        <li><a href="#"><div id="totalbens" class="stat"></div><span>Overall Targeted Population</span></a></li>
       </ul>
     </div>
 
@@ -197,6 +197,7 @@
     <script src="js/vendor/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/vendor/foundation.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="js/index.js"></script>
     <script>
       $(document).foundation();
