@@ -136,11 +136,12 @@ function createFieldReports(data){
 }
 
 function createAlerts(data) {
-    var html = '';
+    var html = '<tr><th>Date of Alert</th><th>Operation</th><th>Alert Category</th><th>Alert Message</th><th>Type of Alert</th></tr>';
     data.forEach(function (d, i) {
         if (i < 5) {
             html += '<tr><td>' + d['#date'] + '</td><td>' + d['#operation'] + '</td><td>' + d['#x_alert+cat'] + '</td><td>' + d['#x_alert+message'] + '</td><td>' + d['#x_alert+type'] + '</td></tr>';
         }
+
     });
     $('#latestAlerts').html(html);
 }
