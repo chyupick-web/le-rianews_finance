@@ -213,7 +213,7 @@ var date = yyyy + '-' + mm + '-' + dd;
 appealsurl = appealsurl.replace('999999',date);
 var rssfeed = 'https://beta.proxy.hxlstandard.org/data.json?force=on&strip-headers=on&url=http%3A//52.91.94.199/open/gdacs&verify=off'
 var fieldReportsURL = 'https://beta.proxy.hxlstandard.org/data.json?strip-headers=on&force=on&url=https%3A//52.91.94.199/open/fieldreports/7&verify=off'
-var alertsURL = 'https://proxy.hxlstandard.org/data.json?strip-headers=on&force=on&url=https%3A//docs.google.com/spreadsheets/d/1Yw11F4pghDr7JWhhqTe6dM42w7gqx7W86CFSn0kzKnc&force=on';
+var alertsURL = 'https://proxy.hxlstandard.org/data.json?filter01=sort&force=on&url=https%3A//docs.google.com/spreadsheets/d/1Yw11F4pghDr7JWhhqTe6dM42w7gqx7W86CFSn0kzKnc&strip-headers=on&sort-reverse01=on&sort-tags01=%23date-time';
                 
 var dataCall = $.ajax({
     type: 'GET',
